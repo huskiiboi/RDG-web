@@ -254,6 +254,7 @@ nav {
             font-size: 24px;
             font-family: var(--font-serif);
             font-size: 36px;
+            text-align: center;
         }
         p {
             text-align: center;
@@ -322,6 +323,7 @@ nav {
         margin: 0;
         font-size: 36px;
         font-family: var(--font-serif);
+        text-align: center;
     }
 }
 
@@ -433,6 +435,7 @@ nav {
         font-family: var(--font-serif);
         font-size: 36px;
         font-weight: var(--font-bold);
+        text-align: center;
     }
 
     .steps-nav {
@@ -670,6 +673,12 @@ footer {
 
 
 @media screen and (max-width: 900px) {
+    nav {
+        padding: 0;
+    }
+    nav .logo {
+        width: 200px;
+    }
     nav .menu {
         display: none;
     }
@@ -678,14 +687,26 @@ footer {
         display: flex;
     }
 
+    .about .about-content{
+        width: 80%;
+    }
+
+    .steps {
+        padding: 50px;
+    }
     .steps .steps-content {
         display: flex;
         flex-direction: column;
     }
 
+    .steps .steps-nav .step-line {
+        width: 50px;
+    }
+
     .contact-us {
         display: flex;
         flex-direction: column;
+        padding: 0;
     }
 
     .services {
