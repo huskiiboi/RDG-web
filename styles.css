@@ -6,9 +6,9 @@
 
     --white: #ffffff;
     --black: #000000;
-    --off-white: #E5E5E6;
+    --off-white: #ecede9;
     --text-light: #E6E6E6;
-    --sub-text: #4C4949;
+    --sub-text: #303030;
 
     /* --- fonts --- */
     --font-serif: 'Cormorant Garmond', Georgia, serif;
@@ -52,7 +52,7 @@ nav {
     z-index: 4;
 
     background-color: var(--navy);
-    padding: 0 20px;
+    padding: 10px 20px;
 
     .logo {
         display: flex;
@@ -231,13 +231,40 @@ nav {
 /* --- ABOUT --- */
 .about {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    box-sizing: border-box;
 
     width: 100%;
     height: auto;
+    padding: 3rem;
+    gap: 20px;
+    border-top: 5px solid var(--gold);
 
-    justify-content: center;
-    align-items: center;
+    .about-button {
+        display: flex;
+        justify-content: center;
+        a {
+            margin: 20px 0 0;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+
+
+            border: 5px solid var(--gold);
+            color: var(--gold);
+            padding: 10px 30px;
+            font-weight: var(--font-bold);
+            
+            transition: background .25s, color .25s;
+
+            &:hover {
+                background-color: var(--gold);
+                color: var(--white);
+            }
+        }
+    }
 
     .about-content {
         display: flex;
@@ -245,28 +272,66 @@ nav {
         justify-content: center;
         align-items: center;
 
-        width: 50%;
-        padding: 3rem 0;
-        gap: 20px;
+        width: 100%;
+        padding: 2rem;
 
-        h2 {
-            margin: 0;
+        /* background-color: var(--off-white); */
+        color: var(--white);
+        border: 5px solid var(--gold);
+
+        h1 {
+            margin: 0 0 20px;
+            padding: 10px;
+            border-bottom: 5px solid var(--gold);
             font-size: 24px;
             font-family: var(--font-serif);
             font-size: 36px;
             text-align: center;
         }
-        p {
+
+        h2 {
+            margin: 0 0 20px;
+            font-size: 20px;
+            font-weight: var(--font-bold);
             text-align: center;
+        }
+        p {
             margin: 0;
             line-height: 1.6;
             font-size: 20px;
         }
 
-        .enrolled-agent-info {
+        .p-bold {
+            font-weight: var(--font-bold);
+        }
+    }
+}
+
+.meet-the-founder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+
+    width: 100%;
+    padding: 1rem 10rem;
+
+    h1 {
+        margin: 0;
+        font-size: 36px;
+        font-family: var(--font-serif);
+    }
+    p {
+        margin: 0;
+        line-height: 1.6;
+        font-size: 20px;
+        color: var(--white);
+    }
+
+    .enrolled-agent-info {
             margin: 20px;
-            display: grid;
-            grid-template-columns: min-content 1fr;
+            display: flex;
             align-items: center;
             justify-content: center;
             
@@ -289,14 +354,14 @@ nav {
                 height: auto;
                 grid-row: span 2;
 
-                h1 {
+                h2 {
                     margin: 0;
                     grid-row: span 2;
-                    font-size: 32px;
+                    font-size: 24px;
                     font-family: var(--font-serif);
                     font-weight: var(--font-bold);
                 }
-                h2 {
+                h3 {
                     margin: 0;
                     font-size: 24px;
                     font-weight: var(--font-regular);
@@ -304,7 +369,6 @@ nav {
             }
             
         }
-    }
 }
 
 /* --- BAND --- */
@@ -314,10 +378,10 @@ nav {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    border-bottom: 5px solid var(--gold);
 
     width: 100%;
     padding: 20px;
-    border-bottom: 5px solid var(--gold);
 
     h1 {
         margin: 0;
@@ -564,6 +628,7 @@ nav {
 
         h2 {
             margin: 0;
+            color: var(--sub-text);
         }
         
         input {
@@ -618,6 +683,7 @@ nav {
 
         gap: 10px;
         padding: 10px;
+        color: var(--sub-text);
 
         h2 {
             margin: 0;
@@ -673,9 +739,6 @@ footer {
 
 
 @media screen and (max-width: 900px) {
-    nav {
-        padding: 0;
-    }
     nav .logo {
         width: 200px;
     }
@@ -687,8 +750,18 @@ footer {
         display: flex;
     }
 
+    .about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .about .about-content{
-        width: 80%;
+        width: 90%;
+    }
+
+    .meet-the-founder {
+        padding: 2rem;
     }
 
     .steps {
@@ -706,7 +779,7 @@ footer {
     .contact-us {
         display: flex;
         flex-direction: column;
-        padding: 0;
+        padding: 1rem;
     }
 
     .services {
