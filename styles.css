@@ -272,12 +272,11 @@ nav {
         justify-content: center;
         align-items: center;
 
-        width: 100%;
+        width: 60%;
         padding: 2rem;
 
         /* background-color: var(--off-white); */
         color: var(--white);
-        border: 5px solid var(--gold);
 
         h1 {
             margin: 0 0 20px;
@@ -315,7 +314,8 @@ nav {
     box-sizing: border-box;
 
     width: 100%;
-    padding: 1rem 10rem;
+    padding: 1rem 21rem;
+    border-bottom: 5px solid var(--gold);
 
     h1 {
         margin: 0;
@@ -757,7 +757,7 @@ footer {
     }
 
     .about .about-content{
-        width: 90%;
+        width: 100%;
     }
 
     .meet-the-founder {
