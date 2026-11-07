@@ -90,6 +90,8 @@ nav {
         .get-started {
             background: transparent;
             outline: none;
+            white-space: nowrap;
+            flex-shrink: 0;
             border: 5px solid var(--gold);
             cursor: pointer;
             
@@ -241,7 +243,7 @@ nav {
     width: 100%;
     height: auto;
     padding: 3rem;
-    gap: 20px;
+    padding-bottom: 0;
 
     .about-button {
         display: flex;
@@ -273,9 +275,8 @@ nav {
         justify-content: center;
         align-items: center;
 
-        width: 60%;
+        width: 100%;
         padding: 2rem;
-
         color: var(--white);
 
         h1 {
@@ -303,8 +304,8 @@ nav {
             font-weight: var(--font-bold);
         }
     }
-
-    img {
+    
+    .about-image {
         aspect-ratio: 1;
         object-fit: cover;
 
@@ -314,69 +315,123 @@ nav {
     }
 }
 
+.philosophy {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+
+    width: 100%;
+    color: var(--black);
+
+    .card {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        z-index: 2;
+
+        color: var(--white);
+        border-radius: 30px;
+        padding: 1rem;
+        gap: 10px;
+        width: 25%;
+
+        h2 {
+            margin: 0;
+            align-self: center;
+            font-family: var(--font-serif);
+        }
+
+        p {
+            margin: 0;
+            grid-column: span 2;
+            font-size: 18px;
+        }
+
+        .number {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 100%;
+            background-color: var(--gold);
+            height: 50px;
+            width: 50px;
+
+            h3 {
+                margin: 0;
+                color: white;
+                font-family: var(--font-serif);
+                line-height: 1;
+            }
+        }
+    }
+}
+
 .meet-the-founder {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
 
     width: 100%;
-    padding: 1rem 21rem;
-    border-bottom: 5px solid var(--gold);
+    padding: 2rem;
+    color: var(--white);
 
-    h1 {
-        margin: 0;
-        font-size: 36px;
-        font-family: var(--font-serif);
-    }
-    p {
-        margin: 0;
-        line-height: 1.6;
-        font-size: 20px;
-        color: var(--white);
-    }
+    .mtf-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
 
-    .enrolled-agent-info {
-            margin: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            
-            width: 50%;
-            gap: 15px;
-
-            .headshot {
-                grid-row: span 2;
-                grid-column: span 1;
-                img {
-                    border-radius: 50%;
-                    aspect-ratio: 1;
-                    width: 100px;
-                }
-            }
-
-            .name-and-title {
-                display: flex;
-                flex-direction: column;
-                height: auto;
-                grid-row: span 2;
-
-                h2 {
-                    margin: 0;
-                    grid-row: span 2;
-                    font-size: 24px;
-                    font-family: var(--font-serif);
-                    font-weight: var(--font-bold);
-                }
-                h3 {
-                    margin: 0;
-                    font-size: 24px;
-                    font-weight: var(--font-regular);
-                }
-            }
-            
+        h1 {
+            margin: 0 0 20px;
+            padding: 10px;
+            border-bottom: 5px solid var(--gold);
+            font-size: 24px;
+            font-family: var(--font-serif);
+            font-size: 36px;
+            text-align: center;
         }
+    }
+
+    .founder-information {
+        display: grid;
+        grid-template-columns: min-content 1fr;
+        height: min-content;
+
+        gap: 0 20px;
+
+        .headshot {
+            border-radius: 100%;
+            width: 150px;
+            grid-row: span 3;
+        }
+
+        h2 {
+            align-self: flex-end;
+            margin: 0;
+            font-size: 36px;
+            font-family: var(--font-serif);
+        }
+
+        h3 {
+            align-self: center;
+            margin: 0;
+            font-family: var(--font-sans);
+        }
+
+        .credentials {
+            align-self: flex-start;
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+
+            img {
+                height: 36px;
+            }
+        }
+    }
 }
 
 /* --- BAND --- */
@@ -823,6 +878,11 @@ footer {
     }
 }
 
+@media screen and (max-width: 1200px) {
+    nav .menu {
+        gap: 2rem;
+    }
+}
 
 
 @media screen and (max-width: 900px) {
@@ -852,8 +912,8 @@ footer {
         width: 100%;
     }
 
-    .meet-the-founder {
-        padding: 2rem;
+    .about svg {
+        display: none;
     }
 
     .steps {
