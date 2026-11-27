@@ -39,6 +39,7 @@ body {
     min-height: fit-content;
     box-sizing: border-box;
     overflow-x: hidden;
+    text-wrap: pretty;
 }
 
 /* -- NAVIGATION -- */
@@ -847,7 +848,7 @@ nav {
             font-weight: var(--font-semi-bold);
         }
         p {
-            margin: 0;
+            margin: 5px 0;
             text-align: left;
             font-weight: var(--font-semi-bold);
         }
